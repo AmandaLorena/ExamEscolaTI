@@ -15,8 +15,7 @@
 > como fonte declarada.
 
 | # | URL | O que foi consultado | Onde aparece no entregável |
-| --- | --- | --- | --- |
-| — | | | |
+https://chatgpt.com/share/6ae287cc-c260-83e9-be1c-f26ee49c9201
 
 *(Ex.: `https://docs.oracle.com/...` → sintaxe de `Optional` → `plan.md` na
 seção de decisões. Esse link é ILUSTRATIVO — fora de linha numerada não
@@ -37,8 +36,7 @@ conta. Se nenhum site foi consultado, escreva: **"Nenhum site consultado."**)*
    dúvida, o professor pede o link e pergunta sobre o código.[^plagio]
 
 | # | Link público da conversa | Onde o conteúdo foi usado |
-| --- | --- | --- |
-| — | | |
+https://chatgpt.com/c/6ae27dd2-0b10-83e8-a7d3-5f67bd0d7186
 
 *(Se nenhuma IA foi utilizada, escreva: **"Nenhuma IA utilizada."**)*
 
