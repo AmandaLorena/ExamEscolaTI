@@ -1,0 +1,10 @@
+{
+  "slug": "ExamEscolaTI",
+  "EXAM_DIR": "exams/2026/track-04-especificacao-sdd-pizzaria",
+  "PRECO_BROTO_CENTAVOS": 2750,
+  "PRECO_GRANDE_CENTAVOS": 5000,
+  "TAXA_ENTREGA_CENTAVOS": 0,
+  "DESCONTO_PROMO_PERCENTUAL": 0,
+  "GORJETA_PADRAO_PERCENTUAL": 0,
+  "PORTA_SERVICO": 8002
+}
