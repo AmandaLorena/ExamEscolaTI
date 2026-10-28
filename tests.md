@@ -153,12 +153,6 @@ Para os cenários percentuais, utilizar uma configuração de teste com `DESCONT
 | T81 | Informar gorjeta decimal em vez de inteiro | `422`; erro `gorjeta_invalida`, conforme validação do contrato |
 | T82 | Informar gorjeta inválida e tentar fechar comanda inexistente | Prevalece a validação do body, conforme a precedência definida no contrato |
 
-### Nota sobre arredondamento de porcentuais
-
-O desconto promocional e a gorjeta usam arredondamento **para cima (`ceil`)**: qualquer fração de centavo aumenta o resultado para o próximo centavo inteiro. Isso é diferente do arredondamento *half-even*, que arredonda empates para o inteiro par mais próximo.
-
-O ticket médio utiliza arredondamento para o inteiro mais próximo, com valores terminados exatamente em 0,5 arredondados para cima. As regras de arredondamento devem ser aplicadas somente aos cálculos a que pertencem.
-
 ## 11. Testes de divisão da conta — UC15
 
 | ID | Cenário | Resultado esperado |
