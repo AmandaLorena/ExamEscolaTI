@@ -14,8 +14,9 @@
 > texto corrido — inclusive o exemplo logo abaixo — **não são contados**
 > como fonte declarada.
 
-| # | URL | O que foi consultado | Onde aparece no entregável |
-https://chatgpt.com/share/6ae287cc-c260-83e9-be1c-f26ee49c9201
+| # | Link público da conversa | Onde o conteúdo foi usado |
+| --- | --- | --- |
+| 1 | https://chatgpt.com/share/6ae287cc-c260-83e9-be1c-f26ee49c9201 |
 
 *(Ex.: `https://docs.oracle.com/...` → sintaxe de `Optional` → `plan.md` na
 seção de decisões. Esse link é ILUSTRATIVO — fora de linha numerada não
