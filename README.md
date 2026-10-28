@@ -1,150 +1,61 @@
-# Prova 02 · Track 04 — Spec-Driven Development (Pizzaria)
+# API da Pizzaria — Especificação SDD
 
-> No momento da aplicação, esta pasta virou o **seu repositório** (enunciado,
-> contrato e rubrica estão na raiz). O esqueleto com os workflows de correção
-> continua aqui, por trás.
+## 1. Objetivo
 
-Você **não escreve código**. Você escreve **especificações em Markdown** que,
-na correção, são passadas por um modelo de IA fixo — **Kimi 2.8 (Preview
-2026)**, **sem harness**: apenas o agente, com janela de **256k tokens**,
-executando a tarefa proposta pelos seus `.md` (mesmo modelo e mesma
-configuração para todos os alunos). A prova avalia sua capacidade de
-**especificar**.
+Este repositório contém a documentação de especificação de uma API para gerenciamento de pedidos de uma pizzaria, utilizando a abordagem **Spec-Driven Development (SDD)**.
 
-> [!NOTE]
-> Os `.md` deste repositório usam *alerts* (`> [!NOTE]`, `> [!WARNING]`…),
-> *footnotes*[^exemplo-footnote] e tabelas de propósito: markdown bem
-> estruturado deixa a spec mais legível para o modelo que vai gerar o
-> código.[^md-na-nota-e]
+O objetivo é definir os requisitos funcionais, as regras de negócio, os critérios de aceitação, os cenários de teste e o planejamento necessário para orientar a implementação da solução.
 
-## O que vale nesta prova
+## 2. Documentação do projeto
 
-| Critério | Pontos |
-| --- | --- |
-| A — Contrato REST (suíte de correção, UC1–UC16) | 30 |
-| B — Casos de borda (suíte de correção, testes não revelados) | 25 |
-| C — Requisitos além dos óbvios (suíte de correção, escondida) | 15 |
-| D — SDLC do código gerado (Containerfile, manifesto de deps, README, testes próprios) | 15 |
-| E — Qualidade mecânica dos `.md` (checklist público, verificado no CI) | 15 |
-| **Total** | **100** |
+Os documentos estão organizados da seguinte forma:
 
-> O feedback do CI cobre o **critério E** integralmente e valida o formato da
-> entrega; **A–D são executados na correção do professor**: o código é gerado
-> pelo **Kimi 2.8 (Preview 2026), sem harness** — só o agente em 256k tokens
-> rodando sua especificação — e avaliado pela suíte escondida. A nota do CI é
-> **parcial**.
+| Arquivo | Descrição |
+|---|---|
+| [`constitution.md`](constitution.md) | Define os princípios, as regras obrigatórias e as diretrizes do projeto. |
+| [`spec.md`](spec.md) | Descreve os requisitos funcionais, os casos de uso e os critérios de aceitação da API. |
+| [`plan.md`](plan.md) | Apresenta a arquitetura proposta, as decisões técnicas e as etapas de implementação. |
+| [`tests.md`](tests.md) | Define os cenários de teste para verificar o atendimento aos requisitos e às regras de negócio. |
+| [`tasks.md`](tasks.md) | Organiza as tarefas de desenvolvimento e suas dependências. |
+| [`FONTES.md`](FONTES.md) | Registra as fontes consultadas e as declarações de uso de inteligência artificial. |
 
-## Suas ferramentas neste repo
+## 3. Escopo funcional
 
-- **Enunciado**: `ENUNCIADO.md` (contexto, contrato dos UC1–UC16, checklist do
-  critério E) — leia **inteiro** antes de escrever
-- **Contrato máquina-legível**: `contrato.json` (o mesmo contrato, para a
-  correção)
-- **Sua variante**: `variante/params.json` (gerada na aplicação; única do seu repo)
-- **Nota parcial**: rode `/auto-correcao` na issue "🎯 Prova" — sai no Summary
-  do workflow *Auto-correção* **e em comentário na issue**. Obrigatório ao
-  menos 1x antes de fechar.
-- **Regras e rastreabilidade**: `docs/REGRAS.md` e `FONTES.md`
+A especificação contempla as seguintes funcionalidades:
 
-## Parâmetros da sua variante
+- Criação, consulta, atualização de status e cancelamento de pedidos.
+- Consulta de pedidos ativos e histórico por cliente.
+- Validação de itens e disponibilidade dos sabores no cardápio.
+- Aplicação de descontos promocionais e descontos de fidelidade.
+- Gerenciamento de mesas e comandas.
+- Fechamento de comandas, cálculo de gorjetas e divisão de valores.
+- Geração de relatório diário de faturamento.
 
-Cada repositório tem a sua — derivados do **nome do repo**.[^variante] A
-**fonte única** é o arquivo `variante/params.json` (gerado na aplicação) —
-leia os seus valores de lá. O comentário de aplicação na issue "🎯 Prova"
-só espelha o arquivo:
+## 4. Abordagem de desenvolvimento
 
-| Parâmetro | Significado |
-| --- | --- |
-| `PRECO_BROTO_CENTAVOS` | Preço unitário da pizza broto, em centavos |
-| `PRECO_GRANDE_CENTAVOS` | Preço unitário da pizza grande, em centavos |
-| `TAXA_ENTREGA_CENTAVOS` | Taxa cobrada em pedidos tipo **entrega** (balcão e mesa não pagam) |
-| `DESCONTO_PROMO_PERCENTUAL` | Percentual de desconto sobre o subtotal das pizzas (nunca sobre a taxa), arredondando **para cima** |
-| `GORJETA_PADRAO_PERCENTUAL` | Percentual de gorjeta sugerido no **fechamento da conta** (0 = cultura sem gorjeta; o fechamento aceita outro valor por requisição) |
-| `PORTA_SERVICO` | Porta em que o serviço gerado deve escutar na correção |
+A documentação segue a abordagem **Spec-Driven Development (SDD)**, na qual os requisitos e as regras de negócio são definidos antes da implementação.
 
-## Regras
+Os documentos devem ser utilizados de forma complementar, mantendo a consistência entre os requisitos, os testes, o planejamento e as tarefas.
 
-- **Janela**: 120 minutos (divulgada como 1h30), contados a partir do commit
-  de aplicação ("chore: aplicar prova …", feito pelo bot). O relógio já está
-  rodando — dê push antes do fim da janela.
-- **Individual. Consulta é permitida — rastreabilidade obrigatória**: qualquer
-  site ou IA usados vão para `FONTES.md` (URL/link público + onde aparece no
-  entregável). Se não usou nada, declare isso explicitamente lá.
-- **IA como agente é proibida** (IA que edita arquivos ou executa comandos no
-  seu lugar → nota 0, plágio). IA como consulta, com a conversa pública e
-  registrada em `FONTES.md`, é permitida.
-- O entregável são **especificações em `.md`**. **Snippets de código de até
-  20 linhas são aceitos** para elucidar o agente; passou de 20 linhas, é
-  implementação — e implementação nos `.md` **zera a prova**, verificado
-  automaticamente no CI.
-- **Os testes escondidos podem cobrar todo o processo de gestão do SDLC da
-  sua entrega** — organização, higiene de código, segredos no repo, linters
-  genéricos da linguagem. Entregue como se fosse para produção.
-- **Não altere** `scripts/`, `.github/` ou `docs/` (conferido contra o
-  template) nem `track.json`/`contrato.json`/`rubrica.json`/`ENUNCIADO.md`
-  depois da aplicação (conferido contra o commit de aplicação) — prova zerada.
+Em caso de divergência, devem prevalecer o enunciado e o contrato oficial da atividade, conforme as orientações da seção seguinte.
 
-> [!WARNING]
-> O enunciado contém **um exemplo propositalmente inconsistente** com o
-> contrato (`exemplo_inconsistente` no `contrato.json`). O contrato manda —
-> não copie o exemplo.
+## 5. Instruções para o agente gerador
 
-> [!TIP]
-> Nos seus `.md`, prefira tabelas para casos de teste, *alerts* para riscos e
-> restrições, e *footnotes* para justificativas longas. O checklist do
-> critério E é mecânico — markdown estruturado ajuda você a não esquecer
-> itens.
+1. Leia os documentos na seguinte ordem: `constitution.md`, `spec.md`, `plan.md`, `tests.md` e `tasks.md`.
+2. Em caso de conflito, prevalecem `ENUNCIADO.md`, `contrato.json` e `variante/params.json`. O exemplo do relatório com `faturamento: 123.40` é inválido.
+3. Gere o projeto completo, incluindo:
+   - Código da API.
+   - Testes próprios.
+   - `Containerfile`.
+   - Arquivo de dependências.
+   - README com instruções de execução.
+   - `.gitignore` e `.dockerignore`.
+   - Configuração de linter.
+   - Nenhum segredo armazenado no repositório.
+4. O serviço deve escutar na porta `8002`, utilizar valores monetários em centavos inteiros e respeitar a precedência dos erros `422` antes dos erros `409`.
 
-## Agora
+## 6. Referências e transparência
 
-1. Leia `ENUNCIADO.md` **inteiro** (contexto + contrato + checklist do E).
-2. Escreva seus `.md` de especificação **na raiz do repositório** (ou em
-   `docs/` — o critério E lê os dois; estrutura sugerida: `constitution.md`,
-   `spec.md`, `plan.md`, `tasks.md`, `tests.md` — nomes e quantidade livres,
-   pontuam os 5 melhores).
-3. Crie `.prova/entrada` com o caminho do arquivo inicial da sua spec (ex.:
-   `README.md` ou `SDD/README.md`) — recomendamos um README **índice** com
-   links para os demais `.md` (veja "Ponto de entrada" no ENUNCIADO).
-4. Faça **commits pequenos e frequentes** ao longo da prova — pushes **não**
-   disparam correção.
-5. Se usou qualquer consulta (site ou IA), preencha `FONTES.md` antes do push
-   final.
-6. Rode `/auto-correcao` na issue "🎯 Prova" e veja o critério E pontuado.
-   **Obrigatório ao menos 1x.**
-7. **Feche a issue "🎯 Prova"** — isso encerra a prova e gera o
-   `teacher.json` de entrega. Fechar sem `/auto-correcao` reabre a issue com
-   aviso. Boa prova! 🚀
+As fontes utilizadas na elaboração da documentação e as consultas de inteligência artificial estão registradas em [`FONTES.md`](FONTES.md).
 
-[^exemplo-footnote]: É isso aqui: nota de rodapé. No GitHub, escreva `[^id]`
-    no texto e defina `[^id]: texto` em qualquer lugar do arquivo.
-[^md-na-nota-e]: O critério E pontua conteúdo (checklist mecânico), mas uma
-    spec bem formatada é mais fácil de manter completa — e de ler.
-[^variante]: A variante é derivada do nome do repositório por
-    `scripts/variante.py`. Na correção ela é recalculada a partir do nome do
-    seu repo, então o `params.json` de outro aluno não serve para você.
-
----
-
-## ⚠️ Último aviso — este README é seu
-
-Este arquivo, depois de lido, **é seu**: edite-o e indique o que achar
-necessário para a entrega da sua prova — onde está o ponto de entrada da sua
-solução, decisões que tomou, o que o corretor deve olhar primeiro. O CI
-verifica se o README segue com o texto da prova: **README idêntico ao
-enunciado = aviso automático na issue** (e, em tracks com peso de README, 0
-no critério). Editar não custa nada e evita que algo que você fez passe
-despercebido na correção.
-
-**Nossos — não edite e não crie arquivos dentro:**
-
-- `tests/public/` — testes da correção. Arquivo novo ou alterado aqui **zera
-  a prova** (procedência). Testes próprios são boa prática — crie-os em pasta
-  sua (ex.: `tests/app/`, `meus-testes/`), nunca em `tests/public/`.
-- `contrato.json`, `rubrica.json`, `track.json`, `ENUNCIADO.md` — intocáveis
-  após a aplicação; alteração = zero.
-- `scripts/`, `.github/` — motor da prova e workflows; não edite.
-
-**Seus — crie à vontade:** raiz, `src/`, `app/`, `backend/`, `frontend/`,
-`tests/<sua-pasta>/`, `meus-testes/`, `docs/` (sem alterar o que já veio,
-como `docs/REGRAS.md`). Arquivo novo fora dos caminhos protegidos nunca é
-trampa — é trabalho.
+A implementação deve respeitar os requisitos e o contrato oficial da atividade, e o conteúdo entregue deve ser compreendido e revisado antes da submissão.
