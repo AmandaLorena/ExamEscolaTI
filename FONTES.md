@@ -16,9 +16,4 @@ Declaro que as fontes externas e o uso de inteligência artificial foram registr
 
 **Nome:** Amanda Lorena Ferreira Silverio
 
-**RA:** [preencher com o RA utilizado em `ALUNO.md`]
-
-    para justificativas. O mesmo padrão vale para os `.md` que você entregar.
-[^plagio]: Rubrica comum da disciplina: conteúdo de LLM não declarado
-    configura plágio e zera a prova — o link público da conversa é o que
-    transforma "copiou" em "consultou".
+**RA:** 23130634-2]
